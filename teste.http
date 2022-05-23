@@ -1,0 +1,53 @@
+POST http://127.0.0.1:8888/send/message HTTP/1.1
+content-type: application/json
+
+{
+    "to": "5516900000000",
+    "body": "Envio de mensagem nº 28"
+}
+###
+POST http://127.0.0.1:8888/process/messages HTTP/1.1
+content-type: application/json
+
+{
+    "infos": [
+        {
+            "to": "5516900000000",
+            "campaignMessage": "Mensagens em massa",
+            "blacklist": false,
+            "sended": false
+        },
+        {
+            "to": "5516900000000",
+            "campaignMessage": "Mensagens em massa",
+            "blacklist": false,
+            "sended": false
+        },
+        {
+            "to": "5516900000",
+            "campaignMessage": "Mensagens em massa",
+            "blacklist": false,
+            "sended": false
+        },
+        {
+            "to": "5516900000000",
+            "campaignMessage": "Mensagens em massa",
+            "blacklist": false,
+            "sended": false
+        }
+    ]
+}
+###
+GET http://127.0.0.1:8888/status
+###
+POST http://127.0.0.1:8888/check/numbers HTTP/1.1
+content-type: application/json
+
+{
+    "numbers": [
+        {"number": "5516900000000", "valid": false, "observation": ""},
+        {"number": "5516900000001", "valid": false, "observation": ""},
+        {"number": "551690000", "valid": false, "observation": ""}
+    ]
+}
+###
